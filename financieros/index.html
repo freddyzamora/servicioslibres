@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=”utf-8″>
+	<title>Servisoftware - Tasas de interes</title>
+	<link rel="stylesheet" href="js/formstyle.css" type="text/css" media="all" />
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+		function calcularInteres(){
+    		
+			var capital   = parseFloat($("input#capital").val());
+			var intereses = parseFloat($("input#interes").val());
+			var periodos  = parseFloat($("input#periodos").val());
+
+			var rendimiento  = (capital*(intereses)/100)*periodos;
+			var capitalFinal = capital + rendimiento;
+
+			$("input#rendimiento").val(rendimiento);
+			$("input#capitalfinal").val(capitalFinal);
+		}
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>SERVICIOS FINANCIEROS</h1>
+		<h2>SERVICIOS</h2>
+	</header>
+	<section>
+		<article id='intro'>
+			<p><strong>TASA DE INTERES SIMPLE</strong> <a href="tasadeinteressimple.html">Acceder aqui</a></p>
+		</article>
+	</section>
+	<footer>
+		<div class="location">
+	</footer>
+</body>
+</html> 

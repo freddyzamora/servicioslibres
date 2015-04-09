@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=”utf-8″>
+	<title>Servisoftware - Tasas de interes</title>
+	<link rel="stylesheet" href="js/formstyle.css" type="text/css" media="all" />
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+		function calcularInteres(){
+    		
+			var capital   = parseFloat($("input#capital").val());
+			var intereses = parseFloat($("input#interes").val());
+			var periodos  = parseFloat($("input#periodos").val());
+
+			var rendimiento  = (capital*(intereses)/100)*periodos;
+			var capitalFinal = capital + rendimiento;
+
+			$("input#rendimiento").val(rendimiento);
+			$("input#capitalfinal").val(capitalFinal);
+		}
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>SERVICIOS FINANCIEROS</h1>
+		<h2>CALCULO DE LA TASA DE INTERES SIMPLE</h2>
+	</header>
+	<section>
+		<article id='intro'>
+			<p><strong>INTERES SIMPLE</strong></p>
+			<p>Es el interés o beneficio que se obtiene de una inversión financiera o de capital cuando los intereses producidos durante cada periodo de tiempo que dura la inversión se deben únicamente al capital inicial, ya que los beneficios o intereses se retiran al vencimiento de cada uno de los periodos. Los periodos de tiempo pueden ser años, trimestres, meses, semanas, días, o cualquier duración.O sea el interés se aplica a la cantidad inicial, los intereses no se agregan al capital  (Fuente: Wikipedia.org)</p>
+		</article>
+		<article >
+			<p><strong>FORMULA APLICADA</strong></p>
+
+			<p>C = K(1+n*i)</p>
+
+			<p>C = Capital Final.</p>
+			<p>K = Capital Inicial.</p>
+			<p>n = Número de periodos (meses, trimestres, años.....)</p>
+			<p>i = Ínteres</p>
+		</article>
+	</section>
+	<br>
+	<section >
+		<article >
+			<p><strong>SERVICIO</strong></p>
+		</article>	
+		<div align="center">
+			<form class="form" method="post" action="#">
+				<p class="name">
+					<input type="number" name="capital"  id="capital"  value="0">
+					<label>Capital Inicial:  </label>
+				</p>
+				<p class="name">
+					<input type="number" name="periodos" id="periodos" value="0">
+					<label>Periodos:</label>
+				</p>
+
+				<p class="name">
+					<input type="number" name="interes"  id="interes"  value="0" step="any">
+					<label>Interes:</label>          
+				</p>
+				<p class="submit">
+						<button type="button" name="submit" id="submit" onclick="calcularInteres()">Calcular</button>
+				</p>
+				<p class="name">
+					<input type="number" name="rendimiento" id="rendimiento" STYLE="text-align: right;"  value="0" readonly="">
+					<label>Rendimiento: </label>  
+				</p>
+				<p class="name">
+					<input type="number" name="capitalfinal" id="capitalfinal" STYLE="text-align: right;"  value="0" readonly="">
+					<label>Capital Final: </label>
+				</p>
+			</form>
+		</div>
+	</section>
+	<footer>
+		<div class="location">
+	</footer>
+</body>
+</html> 
